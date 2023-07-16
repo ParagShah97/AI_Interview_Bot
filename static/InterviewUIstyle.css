@@ -1,0 +1,84 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: tahoma, sans-serif;
+    box-sizing: border-box;
+}
+html,body{
+    height: 100%;
+}
+.leftOuterBlock{
+
+float: left;
+width: 75%;
+height: 100%;
+background-color: aqua;
+}
+
+.leftHeader{
+    
+    width: 100%;
+    height: 70px;
+    background-color: dodgerblue;
+}
+.question{
+    
+    width: 100%;
+    height: 40%;
+    background-color: rgba(117, 117, 117, 0.698);
+    
+}
+.question textarea{
+    margin-top: 24px;
+    margin-left: 25px;
+    padding: 10px;
+    width: 95%;
+    height: 80%;
+    resize: none;
+    border-radius: 10px;
+    box-shadow: 2px 2px rgba(144, 144, 144);
+    font-size: medium;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.answer{
+    width: 100%;
+    height: 60%;
+    background-color: royalblue;
+}
+.answer textarea{
+    font-family: 'Lucida Sans';
+    margin-top: 24px;
+    margin-left: 25px;
+    padding: 10px;
+    width: 95%;
+    height: 70%;
+    resize: none;
+    border-radius: 10px;
+    box-shadow: 2px 2px rgba(144, 144, 144, 0.698);
+    font-size: medium;
+}
+.rightOuterBlock{
+float: right;
+width: 25%;
+height: 100%;
+background-color: whitesmoke;
+}
+
+.rightHeader{
+    width: 100%;
+    height: 70px;
+    background-color: rgb(30, 90, 255);
+}
+.timer{
+    padding-top: 10px;
+    font-size: large;
+    text-align: center;
+}
+.test_navigation{
+    width: 100%;
+    height: 650px;
+    background-color: rgb(30, 90, 255);
+    font-size: large;
+    text-align: center;
+}

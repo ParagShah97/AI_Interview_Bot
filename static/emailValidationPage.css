@@ -1,0 +1,22 @@
+.centerDiv{
+    width: 700px;
+    height: 560px;
+    
+    position: relative;
+    margin: auto;
+    
+}
+.gmailLogo
+    {
+      position: relative;
+      width: 700px;
+     height: 560px;
+      top: 0;
+      left: 0;
+    }
+    .mailImg
+    {
+      position: absolute;
+      top: 350px;
+      left: 160px;
+    }

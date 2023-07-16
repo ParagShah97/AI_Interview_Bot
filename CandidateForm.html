@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Candidate Form</title>
+</head>
+<body>
+    <form action="http://localhost:5000/candidate" method="POST"  autocomplete="off">
+    <fieldset>
+        <legend>Personal Information</legend>
+        <table>
+            <tr>
+                <td><label for="firstName">First Name</label><span style="color: red;font-size: small;">*</span></td>
+                <td><input type="text" name="firstName" id="firstName" autofocus required></td>
+            </tr>
+            <tr>
+                <td><label for="Middle Name">Middle Name</label></td>
+                <td><input type="text" name="middleName" id="middleName"></td>
+            </tr>
+            <tr>
+                <td><label for="lastName">Last Name</label><span style="color: red;font-size: small;">*</span></td>
+                <td><input type="text" name="lastName" id="lastName" required></td>
+            </tr>
+            <tr>
+
+                <td><label for="">Date of Birth</label><span style="color: red;font-size: small;">*</span></td>
+                <td><input type="date" name="dob" id="dob" required></td>
+            </tr>
+            <tr>
+                <td><label for="gender">Gender</label><span style="color: red;font-size: small;">*</span></td>
+                <td>
+                    Male<input type="radio" name="gender" id="gender" value="MALE">
+                    Female<input type="radio" name="gender" id="gender" value="FEMALE">
+                </td>
+            </tr>
+            <tr>
+                <td><label for="location">Current Location</label><span style="color: red;font-size: small;">*</span></td>
+                <td><input type="text" name="location" id="location" required></td>
+            </tr>
+            <tr>
+                <td><label for="adhar">Adhar</label></td>
+                <td><input type="text" name="adhar" id="adhar"></td>
+            </tr>
+            
+        </table>
+    </fieldset>
+    <fieldset>
+        <legend>Professional Information</legend>
+        <table>
+           <tr>
+            <td><label for="email">Email Address</label><span style="color: red;font-size: small;">*</span></td>
+            <td><input type="email" name="email" id="email" required></td>
+        </tr>
+        <tr>
+            <td><label for="institute">Institute Name</label><span style="color: red;font-size: small;">*</span></td>
+            <td><input type="text" name="institute" id="institute" required></td>
+        </tr>
+        <tr>
+            <td><label for="university">University Name</label><span style="color: red;font-size: small;">*</span></td>
+            <td><input type="text" name="university" id="university" required></td>
+        </tr>
+        <tr>
+            <td><label for="ugScore">UG cgpa</label><span style="color: red;font-size: small;">*</span></td>
+            <td><input type="number" name="ugScore" id="ugScore" step="0.1" required></td>
+        </tr>
+        <tr>
+            <td><label for="score12th">12th/diploma Percentage</label><span style="color: red;font-size: small;">*</span></td>
+            <td><input type="number" name="score12th" id="score12th" step="0.1" required></td>
+        </tr>
+        <tr>
+            <td><label for="score10ts">10th Percentage</label><span style="color: red;font-size: small;">*</span></td>
+            <td><input type="number" name="score10th" id="score10th" step="0.1" required></td>
+        </tr>
+        <tr>
+            <td><label for="">Upload Resume</label><span style="color: red;font-size: small;">*</span></td>
+            <td><input type="file" name="resume" id="resume" required></td>
+        </tr>
+        </table>
+    </fieldset>
+    <fieldset>
+        <legend>Declaration</legend>
+        <span style="color: red;font-size: small;">*</span><input type="checkbox" name="declaration" id="declaration" value=''>
+        I Declare that all the information submitted is authentic , incase any inforation found invalid company have the right to stop your candidature.
+        <br><input type="submit" value="Submit" style="align-self: auto;"> 
+    </fieldset>
+</form>
+</body>
+</html>

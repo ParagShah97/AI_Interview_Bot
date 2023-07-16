@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">    
+    <title>Technical Round</title>
+    <link rel="stylesheet" type='text/css' href="/static/InterviewUIstyle.css">
+    
+</head>
+<body>
+    
+    <div id='leftOuterBlock' class='leftOuterBlock'>
+        
+        <div id="leftHeader" class="leftHeader">            
+            <table>
+                <tr>
+                    <td><p>Name : </p></td>
+                    <td><p>Parag Shah </p></td>
+                    <td><p>Roll Number : </p></td>
+                    <td><p>0827CS161153</p></td>
+                </tr>
+            </table>
+
+        </div>
+        <div id="question" class="question">
+            
+            <textarea name="questionArea" id="questionArea" readonly>{{ text1 }}</textarea>
+        
+        </div>
+        <div id="answer" class="answer">
+            <textarea name="answerArea" id="answerArea" >{{ text2 }}</textarea>
+        </div>
+
+        
+    
+    </div>
+
+    <div id="rightOuterBlock" class="rightOuterBlock">
+        <div id="rightHeader" class="rightHeader">
+            <div id="timer" class='timer'>                
+            </div>
+            <br><br><hr><hr>
+            <div class='test_navigation' id="test_navigation">
+                <br><br><br>
+                <input type="submit" value="NEXT-->" id="next" name="next" onclick="wayToInterviewResponse()" style="width: 80px;height: 30px;border-radius: 5px;background-color: #555555;color: whitesmoke;cursor: pointer;">
+                <br><br>
+                <form action="http://localhost:5000/interviewAnalysis" method="get">
+                <input type="submit" value="Submit Test" id="submitTest" name="submitTest" style="width: 120px;height: 30px;border-radius: 5px;background-color: #555555;color: whitesmoke;cursor: pointer;">
+                </form>
+                <p style="font-size: medium;color: red;">*Submitting test will terminate interview.</p>
+            </div>
+           
+        </div>
+    </div>
+    
+    <script src="/static/interviewUI.js"></script>
+</body>
+</html>

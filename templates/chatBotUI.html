@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+    <title>ChatBot</title>
+    <script>
+    
+    /*function receive()
+    {
+        var xhttp=new XMLHttpRequest();
+        xhttp.onreadystatechange=function(){
+            if(this.readyState==4 && this.status==200)
+            {
+                varDataToPrint = this.responseText;
+                
+                return str(varDataToPrint);
+            }
+
+        };
+        xhttp.open('GET','http://localhost:5000/demo',true);
+        xhttp.send();
+    }
+    */
+    
+    
+    
+    function addChat()
+    {   
+        // data variable k contain server side bhe ne he json me convert kr k
+        
+        var data=document.getElementById('subjectText');
+        var inputText=data.value;
+        var chatlogs=document.getElementById('chatlogs');
+        var chatblock=document.createElement('div');
+        chatblock.setAttribute('class','chat user');
+        
+        var photoDiv=document.createElement('div');
+        photoDiv.setAttribute('class','photo');
+        var image=document.createElement('img');
+        image.src="/static/student2.png";
+        image.setAttribute('class','photo');
+        var para=document.createElement('p');
+        para.setAttribute('class','chat-message')
+        var node=document.createTextNode(data.value);
+        
+        para.appendChild(node);
+        photoDiv.appendChild(image);
+        chatblock.appendChild(photoDiv);
+        chatblock.appendChild(para);
+        chatlogs.appendChild(chatblock);
+        data.value='';
+        data.focus();
+        chatblock.scrollIntoView();
+        setTimeout(function(){
+
+            var chatlogs=document.getElementById('chatlogs');
+            var chatblock=document.createElement('div');
+            chatblock.setAttribute('class','chat bot');
+            chatblock.setAttribute('id','deleteIt');
+            var photoDiv=document.createElement('div');
+            photoDiv.setAttribute('class','photo');
+            var image=document.createElement('img');
+            image.src="/static/man.png";
+            image.setAttribute('class','photo');
+            var para=document.createElement('p');
+            para.setAttribute('class','chat-message')
+            var image2=document.createElement('img');
+            image2.src="/static/loading2.gif";
+            image2.setAttribute('class','gifClass');
+            para.appendChild(image2);
+            photoDiv.appendChild(image);
+            chatblock.appendChild(photoDiv);
+            chatblock.appendChild(para);
+            chatlogs.appendChild(chatblock);
+            chatblock.scrollIntoView();
+            
+            },10);
+
+            setTimeout(function(){
+                
+                var del=document.getElementById('deleteIt');
+                del.parentNode.removeChild(del);
+                replyChat(inputText);
+            },4000)
+        
+    }
+
+    function replyChat(inputText)
+    {
+        // data variable me return aaya hua message daal na he
+        //var data="very well , The bot is under development , so the reply will be same :-) ";
+        //alert(inputText);
+
+        var varDataToPrint;
+        var xhttp=new XMLHttpRequest();
+        xhttp.onreadystatechange=function(){
+            if(this.readyState==4 && this.status==200)
+            {
+                varDataToPrint = this.responseText;                
+            }
+
+        };
+        inputText=inputText.trim()
+        xhttp.open('POST','http://localhost:5000/demo',false);
+        xhttp.setRequestHeader('Content-type','application/x-www-form-urlencoded');
+        xhttp.send('text='+inputText);
+
+        var data=varDataToPrint;
+        var chatlogs=document.getElementById('chatlogs');
+        var chatblock=document.createElement('div');
+        chatblock.setAttribute('class','chat bot');
+        
+        var photoDiv=document.createElement('div');
+        photoDiv.setAttribute('class','photo');
+        var image=document.createElement('img');
+        image.src="/static/man.png";
+        image.setAttribute('class','photo');
+        var para=document.createElement('p');
+        para.setAttribute('class','chat-message')
+        var node=document.createTextNode(data);
+        
+        para.appendChild(node);
+        photoDiv.appendChild(image);
+        chatblock.appendChild(photoDiv);
+        chatblock.appendChild(para);
+        chatlogs.appendChild(chatblock);        
+        chatblock.scrollIntoView();
+    }
+    </script>
+</head>
+<body>
+    
+    <div class="chatbox"> 
+        <h3 style="font-family: Arial;">Interview Interaction</h3>
+    <hr>
+        <div class="chatlogs"id="chatlogs">
+            <div class="chat bot">
+                <div class="photo"><img src="/static/man.png" alt="alter"></div>
+                <p class="chat-message">Hey!</br>How are you doing ?</p>
+            </div>
+            
+           
+        </div>
+        <div class="chat-form">
+            <textarea name="subjectText" id="subjectText" wrap="hard" autofocus ></textarea>
+            <button onclick="addChat()">Send</button>
+        </div>
+    </div>
+
+    <div id='information' class='info'>
+        <h2>Personal Information</h2><hr><hr>
+        <table>
+            <tr>
+                <td><p id='infoDetails'>First Name :</p></td>
+                <td>
+                    <p id='infoDetails'>{{ userFirstName }}</p>
+                </td>
+            </tr>
+            <tr>
+                <td><p id='infoDetails'>Last Name :</p></td>
+                <td>
+                    <p id='infoDetails'>{{ userLastName }}</p>
+                </td>
+            </tr>
+            <tr>
+                <td><p id='infoDetails'>Roll :</p></td>
+                <td>
+                    <p id='infoDetails'>{{ enroll }}</p>
+                </td>
+            </tr>
+            <tr>
+                <td><p id='infoDetails'>DOB :</p></td>
+                <td>
+                    <p id='infoDetails'>{{ dob }}</p>
+                </td>
+            </tr>            
+        </table>
+        <hr>
+        <table >
+            <tr>
+                <td><p id='infoDetails'>College Name:</p></td>
+                <td><p id='infoDetails'>{{ clgName }}</p></td>
+            </tr>
+            <tr>
+                <td><p id='infoDetails'>Email id :</p></td>
+            <td><p id='infoDetails'>{{ emailId }}</p></td>
+        </tr>
+        </table>
+        <hr>
+        <form action="http://localhost:5000/interviewUI" >
+            <table>
+    
+                <tr aria-rowspan="2"><p style="color: red;">* If you completed your interaction with HR then only proceed.</p><br>Yes to start Interview<br>No for not attempting.</tr>
+                <tr>
+                    <td style="padding-right: 90px;">
+                        <input type="submit" value="Yes" style="width: 40px;height: 30px;border-radius: 5px;cursor: pointer;" >
+                    </td>
+                    <td>
+                        <input type="submit" value="No" formaction="http://localhost:5000/feedback" style="width: 40px;height: 30px;border-radius: 5px;cursor: pointer;" >
+                    </td>
+                </tr>
+            </table>
+            <p style="color: red;">*Note- If you press NO you won't be able to give the test.</p>
+            </form>
+
+
+    </div>
+    
+</body>
+</html>

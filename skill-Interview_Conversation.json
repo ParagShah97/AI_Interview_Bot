@@ -1,0 +1,559 @@
+{
+  "intents": [
+    {
+      "intent": "yes",
+      "examples": [
+        {
+          "text": "yes"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Welcome_Response",
+      "examples": [
+        {
+          "text": "i am doing great"
+        },
+        {
+          "text": "amazing"
+        },
+        {
+          "text": "nice"
+        },
+        {
+          "text": "fine"
+        },
+        {
+          "text": "great !"
+        },
+        {
+          "text": "i am good"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "ThankYou",
+      "examples": [
+        {
+          "text": "thanx"
+        },
+        {
+          "text": "thank you"
+        },
+        {
+          "text": "thanks"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Technology_Response",
+      "examples": [
+        {
+          "text": "dbms"
+        },
+        {
+          "text": "R"
+        },
+        {
+          "text": "python"
+        },
+        {
+          "text": "java"
+        },
+        {
+          "text": "c"
+        },
+        {
+          "text": "c++"
+        },
+        {
+          "text": "javascript"
+        },
+        {
+          "text": "nodeJS"
+        },
+        {
+          "text": "angularJS"
+        },
+        {
+          "text": "Ruby"
+        },
+        {
+          "text": "AWS"
+        },
+        {
+          "text": "Artificial Intelligence"
+        },
+        {
+          "text": "swift"
+        },
+        {
+          "text": "Machine Learning"
+        },
+        {
+          "text": "salesforce"
+        },
+        {
+          "text": "html"
+        },
+        {
+          "text": "css"
+        },
+        {
+          "text": "data structure"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "no",
+      "examples": [
+        {
+          "text": "no"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "ohk",
+      "examples": [
+        {
+          "text": "ohk"
+        },
+        {
+          "text": "sure"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "general_Appeared",
+      "examples": [
+        {
+          "text": "instutute"
+        },
+        {
+          "text": "process"
+        },
+        {
+          "text": "recruitment"
+        },
+        {
+          "text": "company"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Interest_Response",
+      "examples": [
+        {
+          "text": "coding"
+        },
+        {
+          "text": "travelling"
+        },
+        {
+          "text": "listening music"
+        },
+        {
+          "text": "art"
+        },
+        {
+          "text": "painting"
+        },
+        {
+          "text": "playing instruments"
+        },
+        {
+          "text": "dancing"
+        },
+        {
+          "text": "reading"
+        },
+        {
+          "text": "writting"
+        },
+        {
+          "text": "cooking"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "College_Response",
+      "examples": [
+        {
+          "text": "institute of technology"
+        },
+        {
+          "text": "institute of managment"
+        },
+        {
+          "text": "institute of research"
+        },
+        {
+          "text": "institute of technology and research"
+        },
+        {
+          "text": "institute"
+        }
+      ],
+      "description": ""
+    }
+  ],
+  "entities": [],
+  "metadata": {
+    "api_version": {
+      "major_version": "v2",
+      "minor_version": "2018-11-08"
+    }
+  },
+  "dialog_nodes": [
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Where have you appeared?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_5_1579606608126",
+      "conditions": "#Yes_Appeared",
+      "dialog_node": "node_8_1579607219690",
+      "previous_sibling": "node_3_1579607162112"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Don't worry it would be a nice experience !\nSo shall we begin ?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_5_1579606608126",
+      "conditions": "#No_Appeared",
+      "dialog_node": "node_3_1579607162112"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Great !\nWe are set with your background.\nLet's move on !!\nohk ?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#Interest_Response",
+      "dialog_node": "node_9_1579606083460",
+      "previous_sibling": "node_7_1579605251289"
+    },
+    {
+      "type": "standard",
+      "title": "Welcome Reply",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "I Think it would be pretty exciting to interact with u :-)\nSo let's begin!!\nFrom which college do you belong ?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#Welcome_Response",
+      "dialog_node": "node_1_1579604274110",
+      "previous_sibling": "Welcome"
+    },
+    {
+      "type": "standard",
+      "title": "Anything else",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "I didn't understand. You can try rephrasing."
+              },
+              {
+                "text": "Can you reword your statement? I'm not understanding."
+              },
+              {
+                "text": "I didn't get your meaning."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "anything_else",
+      "dialog_node": "Anything else",
+      "previous_sibling": "node_9_1579606224853",
+      "disambiguation_opt_out": true
+    },
+    {
+      "type": "standard",
+      "title": "College Reply",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Ahmmm....\nSo on which technology have you worked on??"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#College_Response",
+      "dialog_node": "node_10_1579604741200",
+      "previous_sibling": "node_1_1579604274110"
+    },
+    {
+      "type": "standard",
+      "title": "Technology Reply",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Seems interesting !!\nAlthough Learning never stops , yet more to explore ;-)\nCome on now , share your hobbies and interest"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#Technology_Response",
+      "dialog_node": "node_7_1579605251289",
+      "previous_sibling": "node_10_1579604741200"
+    },
+    {
+      "type": "standard",
+      "title": "general",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "\nWe are set with your background.\nLet's move on !!\nohk ?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_5_1579606608126"
+      },
+      "conditions": "$general",
+      "dialog_node": "node_9_1579606224853",
+      "previous_sibling": "node_2_1580134079930"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "ohk great!!\nExcited for this test?\nShall we begin?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          },
+          {
+            "title": "",
+            "options": [
+              {
+                "label": "yes",
+                "value": {
+                  "input": {
+                    "text": "begin"
+                  }
+                }
+              },
+              {
+                "label": "no",
+                "value": {
+                  "input": {
+                    "text": "not begin"
+                  }
+                }
+              }
+            ],
+            "response_type": "option"
+          }
+        ]
+      },
+      "conditions": "#general_Appeared",
+      "dialog_node": "node_3_1579607444893",
+      "previous_sibling": "node_5_1579606608126"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "\nohk great!!\nBe excited for another opportunity\nClick on start button to begin the test or submit the feedback form.\nALL THE BEST"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "user_input",
+        "dialog_node": "Anything else"
+      },
+      "conditions": "#yes",
+      "dialog_node": "node_6_1579608634791",
+      "previous_sibling": "node_3_1579607444893"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Don't worry it would be nice experience !\nBe excited for the opportunities.\nClick on  start button to begin the test or submit feedback form\nALL THE BEST"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "user_input",
+        "dialog_node": "Anything else"
+      },
+      "conditions": "#no",
+      "dialog_node": "node_5_1579608732033",
+      "previous_sibling": "node_6_1579608634791"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Your most welcome !"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#ThankYou",
+      "dialog_node": "node_2_1580134079930",
+      "previous_sibling": "node_5_1579608732033"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Have you appeared for the test before ?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          },
+          {
+            "values": [],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#ohk",
+      "dialog_node": "node_5_1579606608126",
+      "previous_sibling": "node_9_1579606083460"
+    },
+    {
+      "type": "standard",
+      "title": "Welcome",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Hey !\nHow are you doing ?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "welcome",
+      "dialog_node": "Welcome"
+    }
+  ],
+  "counterexamples": [],
+  "system_settings": {
+    "off_topic": {
+      "enabled": true
+    },
+    "disambiguation": {
+      "prompt": "Did you mean:",
+      "enabled": true,
+      "randomize": true,
+      "max_suggestions": 5,
+      "suggestion_text_policy": "title"
+    },
+    "human_agent_assist": {
+      "prompt": "Did you mean:"
+    },
+    "spelling_auto_correct": true
+  },
+  "learning_opt_out": false,
+  "name": "Interview_Conversation",
+  "language": "en",
+  "description": ""
+}

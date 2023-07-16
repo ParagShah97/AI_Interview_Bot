@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "question": "How to stop a thread in java? ",
+    "answer-1": "We can stop a thread by using the following thread methods. Sleeping,Waiting,Blocked",
+    "answer-2": "Sleep () method is used to sleep the currently executing thread for the given amount of time. Once the thread is wake up it can move to the runnable state. So sleep () method is used to delay the execution for some period.It is a static method.",
+    "answer-3": "sleep () method is used to delay the execution for some period. it suspends the currently executing thread for the given period of time,",
+    "tag": "java"
+  },
+  {
+    "id": 2,
+    "question": "How does Java enable high performance?",
+    "answer-1": "Java uses Just In Time compiler to enable high performance. JIT is used to convert the instructions into bytecodes.",
+    "answer-2": "by jsut in time compiler which convert instruction into bytecode ",
+    "answer-3": "by jit which is used to convert instruction into bytecode",
+    "tag": "java"
+  },
+   {
+    "id": 3,
+    "question": "What do you mean by Constructor?",
+    "answer-1": "When a new object is created in a program a constructor gets invoked corresponding to the class.",
+    "answer-2": "The constructor is a method which has the same name as class name. If a user doesn’t create a constructor implicitly a default constructor will be created.",
+    "answer-3": "If the user created a constructor with a parameter then he should create another constructor explicitly without a parameter. The constructor can be overloaded.",
+    "tag": "java"
+  },
+   {
+    "id": 4,
+    "question": "What is Polymorphism?",
+    "answer-1": "Polymorphism means many forms.",
+    "answer-2": "A single object can refer the super class or sub-class depending on the reference type which is called polymorphism.",
+    "answer-3": "Ability of a function to take more than one form is known as polymorphism. it can be runtime or compiletime",
+    "tag": "java"
+  },
+   {
+    "id": 5,
+    "question": "What is meant by Interface?",
+    "answer-1": "Multiple inheritance cannot be achieved in java. To overcome this problem Interface concept is introduced.",
+    "answer-2": "An interface is a template which has only method declarations and not the method implementation.",
+    "answer-3": "All the methods in the interface are internally public abstract void. All the variables in the interface are internally public static final that is constants. Classes can implement the interface and not extends.The class which implements the interface should provide an implementation for all the methods declared in the interface.",
+    "tag": "java"
+  },
+   {
+    "id": 6,
+    "question": "What is mean by Collections in Java?",
+    "answer-1": "ollection is a framework that is designed to store the objects and manipulate the design to store the objects.",
+    "answer-2": "Searching,Sorting,Manipulation,Insertion,Deletion",
+    "answer-3": "A group of objects is known as collections. All the classes and interfaces for collecting are available in Java utile package.",
+    "tag": "java"
+  },
+   {
+    "id": 7,
+    "question": "what is Set and their types in a collection?",
+    "answer-1": "Set cares about uniqueness. It doesn’t allow duplications. Here “equals ( )” method is used to determine whether two objects are identical or not.",
+    "answer-2": "types of set are hash set, linked hash set, tree hash set",
+    "answer-3": "set checks uniqueness and dont allow duplication",
+    "tag": "java"
+  },
+   {
+    "id": 8,
+    "question": "Explain the Priority Queue.",
+    "answer-1": "Priority Queue: Linked list class has been enhanced to implement the queue interface. Queues can be handled with a linked list. Purpose of a queue is “Priority-in, Priority-out”.",
+    "answer-2": "Hence elements are ordered either naturally or according to the comparator. The elements ordering represents their relative priority.",
+    "answer-3": "in priority queue order of elements defines the relative priority of element.",
+    "tag": "java"
+  },
+   {
+    "id": 9,
+    "question": "What is mean by Exception?",
+    "answer-1": "An Exception is a problem that can occur during the normal flow of an execution. A method can throw an exception when something wails at runtime. ",
+    "answer-2": " If that exception couldn’t be handled, then the execution gets terminated before it completes the task.",
+    "answer-3": "If we handled the exception, then the normal flow gets continued. Exceptions are a subclass of java.lang.Exception.Two types of Exceptions are checked and unchecked exceptions",
+    "tag": "java"
+  },
+   {
+    "id": 10,
+    "question": "What are the different ways to handle exceptions?",
+    "answer-1": "Using try catch, A risky code is surrounded by try block. If an exception occurs, then it is caught by the catch block which is followed by the try block.",
+    "answer-2": "By declaring throws keyword At the end of the method, we can declare the exception using throws keyword.",
+    "answer-3": "by using try catch block or defining throws keyword",
+    "tag": "java"
+  }
+]
